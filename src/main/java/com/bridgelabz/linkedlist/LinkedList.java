@@ -42,4 +42,26 @@ public class LinkedList<T> {
         }
 
     }
+    public Node<T> search(T searchData) {
+        for(Node<T> temp = this.head; temp != null; temp = temp.next) {
+            if (temp.data.equals(searchData)) {
+                return temp;
+            }
+        }
+
+        return null;
+    }
+
+    public boolean insertAfter(T insertData, T searchData) {
+        Node<T> searchedData = this.search(searchData);
+        if (searchedData != null) {
+            Node<T> newNode = new Node(insertData);
+            Node<T> nextNode = searchedData.next;
+            searchedData.next = newNode;
+            newNode.next = nextNode;
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
