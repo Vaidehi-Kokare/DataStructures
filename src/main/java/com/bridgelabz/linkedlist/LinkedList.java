@@ -64,4 +64,9 @@ public class LinkedList<T> {
             return false;
         }
     }
+    public T pop() {
+        T popData = this.head.data;
+        this.head = this.head.next;
+        return popData;
+    }
 }
