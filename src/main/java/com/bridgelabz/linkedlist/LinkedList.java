@@ -69,4 +69,15 @@ public class LinkedList<T> {
         this.head = this.head.next;
         return popData;
     }
+    public T popLast() {
+        T popData = this.tail.data;
+
+        Node temp;
+        for(temp = this.head; temp.next != this.tail; temp = temp.next) {
+        }
+
+        temp.next = null;
+        this.tail = temp;
+        return popData;
+    }
 }
