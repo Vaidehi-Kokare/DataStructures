@@ -31,4 +31,15 @@ public class LinkedList<T> {
 
         System.out.println();
     }
+    public void append(T data) {
+        Node<T> newNode = new Node(data);
+        if (this.head == null) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+
+    }
 }
